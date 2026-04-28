@@ -270,15 +270,24 @@ header .navbar ul li a:hover{
   background: #310ae0f5;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   .work .button-group{
     width: 100%;
   }
   .work .box-container{
-    margin: 0rem;
+    margin: 0 auto;
+    width: 100%;
+    display: block; /* Fallback */
+  }
+  .work .box-container .grid-item {
+    width: 100% !important; /* Forces Isotope to stack them vertically */
+    display: flex;
+    justify-content: center;
   }
   .work .box-container .grid-item .box{
-    width: 95% !important;
+    width: 90% !important;
+    max-width: 380px !important;
+    margin: 1rem auto !important;
   }
 }
 

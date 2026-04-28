@@ -1836,7 +1836,7 @@ section {
     height: 250px !important;
     max-width: 250px !important;
     object-fit: cover !important;
-    object-position: top !important; /* Focus on face */
+    object-position: bottom !important; /* Focus on face */
     border-radius: 2rem !important;
   }
   .about .row .content {
