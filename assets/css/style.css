@@ -379,15 +379,17 @@ header .navbar ul li a:hover {
 /* hero media queries starts*/
 @media (max-width: 450px) {
   .home .btn {
-    margin: 4rem 0;
+    margin: 2rem 0 !important;
   }
 
   .socials {
-    margin-top: 12rem;
+    margin-top: 2rem !important;
   }
 
   .home .image img {
-    margin-top: -12rem;
+    margin-top: 2rem !important;
+    margin-left: 0 !important;
+    width: 90% !important;
   }
 
   .home .content p {
@@ -1754,4 +1756,62 @@ section {
   width: 48px !important;
   height: 48px !important;
   object-fit: contain !important;
+}
+
+/* =========================================
+   MOBILE FIXES FOR GLASSMORPHISM 
+   ========================================= */
+@media (max-width: 768px) {
+  .home {
+    padding-top: 12rem !important; /* clear navbar */
+    align-items: flex-start !important;
+    text-align: center !important;
+  }
+  .home .content {
+    flex: 1 1 100% !important;
+    text-align: center !important;
+  }
+  .home .content h2, .home .content p {
+    text-align: center !important;
+  }
+  .home .image {
+    flex: 1 1 100% !important;
+    margin-top: 2rem !important;
+    text-align: center !important;
+  }
+  .home .image img {
+    margin: 0 auto !important;
+    width: 70% !important;
+    max-width: 300px !important;
+  }
+  .socials {
+    margin-top: 2rem !important;
+  }
+  .social-icons {
+    justify-content: center !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  .home .btn {
+    margin: 2rem auto !important;
+    display: inline-block !important;
+  }
+  
+  .about .row {
+    flex-direction: column !important;
+    padding: 2rem 1rem !important;
+  }
+  .about .row .image img {
+    margin: 0 auto !important;
+  }
+  .about .row .content {
+    padding: 2rem 0 !important;
+  }
+  .about .row .content h3, .about .row .content p {
+    text-align: center !important;
+  }
+  .about .row .content .resumebtn {
+    display: flex !important;
+    justify-content: center !important;
+  }
 }
