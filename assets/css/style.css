@@ -1429,8 +1429,329 @@ form .button-area {
   z-index: 1000;
 }
 
+/* scroll top.active */
 #scroll-top.active {
   top: calc(100% - 12rem);
 }
-
 /* scroll top ends */
+
+/* Digital Serenity Styles */
+#mouse-gradient-react {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 9999px;
+  background-image: radial-gradient(circle, rgba(156, 163, 175, 0.1), rgba(107, 114, 128, 0.05), transparent 70%);
+  transform: translate(-50%, -50%);
+  will-change: left, top, opacity;
+  transition: left 70ms linear, top 70ms linear, opacity 300ms ease-out;
+  width: 400px;
+  height: 400px;
+  filter: blur(40px);
+  z-index: 5;
+}
+@keyframes word-appear { 
+  0% { opacity: 0; transform: translateY(30px) scale(0.8); filter: blur(10px); } 
+  50% { opacity: 0.8; transform: translateY(10px) scale(0.95); filter: blur(2px); } 
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } 
+}
+@keyframes grid-draw { 
+  0% { stroke-dashoffset: 1000; opacity: 0; } 
+  50% { opacity: 0.3; } 
+  100% { stroke-dashoffset: 0; opacity: 0.15; } 
+}
+@keyframes pulse-glow { 
+  0%, 100% { opacity: 0.1; transform: scale(1); } 
+  50% { opacity: 0.3; transform: scale(1.1); } 
+}
+.word-animate { 
+  display: inline-block; 
+  opacity: 0; 
+  margin: 0 0.1em; 
+  animation: word-appear 0.8s ease-out forwards;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; 
+}
+.word-animate:hover { 
+  color: #cbd5e1; 
+  transform: translateY(-2px); 
+  text-shadow: 0 0 20px rgba(203, 213, 225, 0.5); 
+}
+.grid-line { 
+  stroke: #94a3b8; 
+  stroke-width: 0.5; 
+  opacity: 0; 
+  stroke-dasharray: 5 5; 
+  stroke-dashoffset: 1000; 
+  animation: grid-draw 2s ease-out forwards; 
+}
+.detail-dot { 
+  fill: #cbd5e1; 
+  opacity: 0; 
+  animation: pulse-glow 3s ease-in-out infinite; 
+}
+.corner-element-animate { 
+  position: absolute; 
+  width: 40px; 
+  height: 40px; 
+  border: 1px solid rgba(203, 213, 225, 0.2); 
+  opacity: 0; 
+  animation: word-appear 1s ease-out forwards; 
+  z-index: 1;
+}
+.text-decoration-animate { 
+  position: relative; 
+}
+.text-decoration-animate::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: -4px; 
+  left: 0; 
+  width: 0; 
+  height: 1px; 
+  background: linear-gradient(90deg, transparent, #cbd5e1, transparent); 
+  animation: underline-grow 2s ease-out forwards; 
+  animation-delay: 2s; 
+}
+@keyframes underline-grow { 
+  to { width: 100%; } 
+}
+.floating-element-animate { 
+  position: absolute; 
+  width: 4px; 
+  height: 4px; 
+  background: #cbd5e1; 
+  border-radius: 50%; 
+  opacity: 0; 
+  animation: float 4s ease-in-out infinite; 
+  animation-play-state: paused; 
+  z-index: 1;
+}
+@keyframes float { 
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; } 
+  25% { transform: translateY(-10px) translateX(5px); opacity: 0.6; } 
+  50% { transform: translateY(-5px) translateX(-3px); opacity: 0.4; } 
+  75% { transform: translateY(-15px) translateX(7px); opacity: 0.8; } 
+}
+.ripple-effect { 
+  position: fixed; 
+  width: 4px; 
+  height: 4px; 
+  background: rgba(203, 213, 225, 0.6); 
+  border-radius: 50%; 
+  transform: translate(-50%, -50%); 
+  pointer-events: none; 
+  animation: pulse-glow 1s ease-out forwards; 
+  z-index: 9999; 
+}
+
+/* =========================================
+   GLOBAL DARK GLASSMORPHISM THEME OVERRIDES 
+   ========================================= */
+body {
+  background: transparent !important;
+  color: #f8fafc;
+}
+
+/* Header & Navbar */
+header {
+  background-color: rgba(15, 23, 42, 0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+}
+header .logo {
+  color: #f8fafc !important;
+}
+header .logo:hover {
+  color: #94a3b8 !important;
+}
+header .navbar ul li a {
+  color: #cbd5e1 !important;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  color: #60a5fa !important;
+  border-bottom-color: #60a5fa !important;
+}
+@media (max-width: 768px) {
+  header .navbar {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+  }
+  header .navbar ul li a {
+    color: #f8fafc !important;
+  }
+  #menu {
+    color: #f8fafc !important;
+  }
+}
+
+/* Global Headings */
+.heading {
+  color: #f8fafc !important;
+}
+.heading span {
+  color: #60a5fa !important;
+}
+
+/* Sections Backgrounds */
+section {
+  background: transparent !important;
+}
+
+/* Glassmorphism Cards for various components */
+.about .content h3 {
+  color: #f8fafc !important;
+}
+.about .content .tag {
+  color: #cbd5e1 !important;
+}
+.about .content p {
+  color: #94a3b8 !important;
+}
+.about .content .box-container .box p {
+  color: #cbd5e1 !important;
+}
+.about .content .box-container .box p span {
+  color: #f8fafc !important;
+}
+
+/* Skills */
+.skills .container {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+.skills .container .bar .info span {
+  color: #f8fafc !important;
+}
+
+/* Education */
+.education .box {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+.education .box h3 {
+  color: #f8fafc !important;
+}
+.education .box p {
+  color: #cbd5e1 !important;
+}
+
+/* Work / Projects */
+.work .box {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+.work .box .content h3 {
+  color: #f8fafc !important;
+}
+.work .box .content p {
+  color: #cbd5e1 !important;
+}
+
+/* Experience */
+.experience .timeline .container .content {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+.experience .timeline .container .content h2 {
+  color: #f8fafc !important;
+}
+.experience .timeline .container .content p {
+  color: #cbd5e1 !important;
+}
+
+/* Contact Form */
+.contact .container .content {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+.contact .form-group .field {
+  background: rgba(0, 0, 0, 0.2) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.contact .form-group .field::placeholder {
+  color: #64748b !important;
+}
+
+/* Footer */
+.footer {
+  background: rgba(15, 23, 42, 0.5) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+.footer .box h3 {
+  color: #f8fafc !important;
+}
+.footer .box p {
+  color: #cbd5e1 !important;
+}
+.footer .box a {
+  color: #94a3b8 !important;
+}
+.footer .box a:hover {
+  color: #60a5fa !important;
+}
+.footer .credit {
+  color: #f8fafc !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+.footer .credit a {
+  color: #60a5fa !important;
+}
+
+/* Hero Section Specific Overrides */
+.home .content h2 {
+  color: #f8fafc !important;
+}
+.home .content h2 span {
+  color: #f8fafc !important; /* Make all spans white by default */
+}
+.home .content h2 span.accent-text {
+  color: #60a5fa !important; /* Cool blue for "Gore" or "Tanveer" */
+}
+.home .content p {
+  color: #cbd5e1 !important;
+}
+.home .content p span {
+  color: #cbd5e1 !important;
+}
+.home .content p span.typing-text {
+  color: #818cf8 !important; /* Indigo/blue for typing text */
+}
+
+/* Fix "About Me" button placement */
+.home .btn {
+  position: relative !important;
+  display: inline-block !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Fix About Me Portrait Image */
+.about .row .image img {
+  width: 100% !important;
+  max-width: 350px !important;
+  aspect-ratio: 1/1 !important;
+  object-fit: cover !important;
+  object-position: bottom !important;
+  border-radius: 2rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Fix Skills Icons (Tailwind SVG Size) */
+.skills .container .bar .info img {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain !important;
+}

@@ -54,12 +54,67 @@ $(document).ready(function () {
     });
     // <!-- emailjs to mail contact form data -->
 
+    // Digital Serenity Animations
+    const animateWords = () => {
+        const wordElements = document.querySelectorAll('.word-animate');
+        wordElements.forEach(word => {
+            const delay = parseInt(word.getAttribute('data-delay')) || 0;
+            setTimeout(() => {
+                if (word) word.style.animation = 'word-appear 0.8s ease-out forwards';
+            }, delay);
+        });
+    };
+    setTimeout(animateWords, 500);
+
+    const mouseGradient = document.getElementById('mouse-gradient-react');
+    if (mouseGradient) {
+        document.addEventListener('mousemove', (e) => {
+            mouseGradient.style.left = `${e.clientX}px`;
+            mouseGradient.style.top = `${e.clientY}px`;
+            mouseGradient.style.opacity = '1';
+        });
+        document.addEventListener('mouseleave', () => {
+            mouseGradient.style.opacity = '0';
+        });
+    }
+
+    document.addEventListener('click', (e) => {
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple-effect';
+        ripple.style.left = `${e.clientX}px`;
+        ripple.style.top = `${e.clientY}px`;
+        document.body.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 1000);
+    });
+
+    const wordElements = document.querySelectorAll('.word-animate');
+    wordElements.forEach(word => {
+        word.addEventListener('mouseenter', (e) => { e.target.style.textShadow = '0 0 20px rgba(203, 213, 225, 0.5)'; });
+        word.addEventListener('mouseleave', (e) => { e.target.style.textShadow = 'none'; });
+    });
+
+    let scrolled = false;
+    const floatingElements = document.querySelectorAll('.floating-element-animate');
+    window.addEventListener('scroll', () => {
+        if (!scrolled) {
+            scrolled = true;
+            floatingElements.forEach((el, index) => {
+                setTimeout(() => {
+                    if (el) {
+                        el.style.animationPlayState = 'running';
+                        el.style.opacity = '';
+                    }
+                }, (parseFloat(el.style.animationDelay || "0") * 1000) + index * 100);
+            });
+        }
+    });
+
 });
 
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Jigar Sable";
+            document.title = "Portfolio | Tanveer Gore";
             $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {
@@ -71,7 +126,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "backend development", "web designing", "android development", "web development"],
+    strings: ["frontend development", "backend development", "web designing", "web development"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -199,17 +254,17 @@ const srtop = ScrollReveal({
 });
 
 /* SCROLL HOME */
-srtop.reveal('.home .content h3', { delay: 200 });
-srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
+// srtop.reveal('.home .content h3', { delay: 200 });
+// srtop.reveal('.home .content p', { delay: 200 });
+// srtop.reveal('.home .content .btn', { delay: 200 });
 
-srtop.reveal('.home .image', { delay: 400 });
-srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .telegram', { interval: 600 });
-srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
+// srtop.reveal('.home .image', { delay: 400 });
+// srtop.reveal('.home .linkedin', { interval: 600 });
+// srtop.reveal('.home .github', { interval: 800 });
+// srtop.reveal('.home .twitter', { interval: 1000 });
+// srtop.reveal('.home .telegram', { interval: 600 });
+// srtop.reveal('.home .instagram', { interval: 600 });
+// srtop.reveal('.home .dev', { interval: 600 });
 
 /* SCROLL ABOUT */
 srtop.reveal('.about .content h3', { delay: 200 });

@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords"
-    content="jigar sable, portfolio, jigar, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
-  <meta name="description" content="Welcome to Jigar's Portfolio. Full-Stack Web Developer and Android App Developer" />
+    content="Tanveer Gore, portfolio, Tanveer, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
+  <meta name="description" content="Welcome to Tanveer's Portfolio. Full-Stack Web Developer" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <!-- Font Awesome -->
@@ -21,7 +21,52 @@
 
 <body oncontextmenu="return false">
 
-  <!-- pre loader -->
+  <!-- Global Digital Serenity Background -->
+  <div class="digital-serenity-background" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; overflow: hidden; background: linear-gradient(to bottom right, #0f172a, #000000, #1e293b);">
+    <!-- SVG Grid from Digital Serenity -->
+    <svg class="grid-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      <defs>
+        <pattern id="gridReactDarkResponsive" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(100, 116, 139, 0.1)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#gridReactDarkResponsive)" />
+      <line x1="0" y1="20%" x2="100%" y2="20%" class="grid-line" style="animation-delay: 0.5s;" />
+      <line x1="0" y1="80%" x2="100%" y2="80%" class="grid-line" style="animation-delay: 1s;" />
+      <line x1="20%" y1="0" x2="20%" y2="100%" class="grid-line" style="animation-delay: 1.5s;" />
+      <line x1="80%" y1="0" x2="80%" y2="100%" class="grid-line" style="animation-delay: 2s;" />
+      <line x1="50%" y1="0" x2="50%" y2="100%" class="grid-line" style="animation-delay: 2.5s; opacity: 0.05;" />
+      <line x1="0" y1="50%" x2="100%" y2="50%" class="grid-line" style="animation-delay: 3s; opacity: 0.05;" />
+      <circle cx="20%" cy="20%" r="2" class="detail-dot" style="animation-delay: 3s;" />
+      <circle cx="80%" cy="20%" r="2" class="detail-dot" style="animation-delay: 3.2s;" />
+      <circle cx="20%" cy="80%" r="2" class="detail-dot" style="animation-delay: 3.4s;" />
+      <circle cx="80%" cy="80%" r="2" class="detail-dot" style="animation-delay: 3.6s;" />
+      <circle cx="50%" cy="50%" r="1.5" class="detail-dot" style="animation-delay: 4s;" />
+    </svg>
+
+    <!-- Responsive Corner Elements -->
+    <div class="corner-element-animate" style="top: 2rem; left: 2rem; animation-delay: 4s;">
+      <div style="position: absolute; top: 0; left: 0; width: 8px; height: 8px; background: #cbd5e1; opacity: 0.3; border-radius: 50%;"></div>
+    </div>
+    <div class="corner-element-animate" style="top: 2rem; right: 2rem; animation-delay: 4.2s;">
+      <div style="position: absolute; top: 0; right: 0; width: 8px; height: 8px; background: #cbd5e1; opacity: 0.3; border-radius: 50%;"></div>
+    </div>
+    <div class="corner-element-animate" style="bottom: 2rem; left: 2rem; animation-delay: 4.4s;">
+      <div style="position: absolute; bottom: 0; left: 0; width: 8px; height: 8px; background: #cbd5e1; opacity: 0.3; border-radius: 50%;"></div>
+    </div>
+    <div class="corner-element-animate" style="bottom: 2rem; right: 2rem; animation-delay: 4.6s;">
+      <div style="position: absolute; bottom: 0; right: 0; width: 8px; height: 8px; background: #cbd5e1; opacity: 0.3; border-radius: 50%;"></div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-element-animate" style="top: 25%; left: 15%; animation-delay: 0.5s;"></div>
+    <div class="floating-element-animate" style="top: 60%; left: 85%; animation-delay: 1s;"></div>
+    <div class="floating-element-animate" style="top: 40%; left: 10%; animation-delay: 1.5s;"></div>
+    <div class="floating-element-animate" style="top: 75%; left: 90%; animation-delay: 2s;"></div>
+  </div>
+
+  <!-- Mouse Gradient -->
+  <div id="mouse-gradient-react"></div>  <!-- pre loader -->
   <!-- <div class="loader-container">
   <img draggable="false" src="./assets/images/preloader.gif" alt="">
 </div> -->
@@ -45,16 +90,27 @@
 
 
   <!-- hero section starts -->
-  <section class="home" id="home">
-    <div id="particles-js"></div>
+  <section class="home" id="home" style="overflow: hidden;">
 
-    <div class="content">
-      <h2>Hi There,<br /> I'm Tanveer <span>Gore</span></h2>
-      <p>i am into <span class="typing-text"></span></p>
-      <a href="#about" class="btn"><span>About Me</span>
+    <div class="content" style="position: relative; z-index: 10;">
+      <h2 style="color: #f8fafc;">
+        <span class="word-animate" style="animation-delay: 700ms;">Hi</span>
+        <span class="word-animate" style="animation-delay: 850ms;">There,</span><br />
+        <span class="word-animate" style="animation-delay: 1000ms;">I'm</span>
+        <span class="word-animate accent-text" style="animation-delay: 1150ms;">Tanveer</span>
+        <span class="word-animate accent-text" style="animation-delay: 1300ms;">Gore</span>
+      </h2>
+      <p style="color: #cbd5e1;" class="text-decoration-animate">
+        <span class="word-animate" style="animation-delay: 1400ms;">i</span>
+        <span class="word-animate" style="animation-delay: 1500ms;">am</span>
+        <span class="word-animate" style="animation-delay: 1600ms;">into</span>
+        <span class="typing-text"></span>
+      </p>
+      <a href="#about" class="btn word-animate" style="animation-delay: 2000ms; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+        <span>About Me</span>
         <i class="fas fa-arrow-circle-down"></i>
       </a>
-      <div class="socials">
+      <div class="socials word-animate" style="animation-delay: 2200ms;">
         <ul class="social-icons">
           <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/tanveergore/"
               target="_blank"><i class="fab fa-linkedin"></i></a></li>
@@ -67,7 +123,7 @@
         </ul>
       </div>
     </div>
-    <div class="image">
+    <div class="image word-animate" style="animation-delay: 1000ms; position: relative; z-index: 10;">
       <img draggable="false" class="tilt" src="./assets/images/tanveer.png" alt="Tanveer Gore">
     </div>
   </section>
@@ -81,7 +137,7 @@
     <div class="row">
 
       <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/tanveer.png" alt="Tanveer Gore">
+        <img draggable="false" class="tilt" src="./assets/images/tanveer_original.png" alt="Tanveer Gore">
       </div>
       <div class="content">
         <h3>I'm Tanveer</h3>
@@ -191,7 +247,7 @@
           <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
           <div class="btns">
             <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+            <a href="https://github.com/TanveerGore/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
           </div>
         </div>
       </div>
