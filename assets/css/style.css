@@ -670,15 +670,17 @@ header .navbar ul li a:hover {
 }
 
 .education .box-container .box .image {
-  flex: 1 1 20rem;
-  width: 100%;
+  flex: 0 0 22rem;
+  width: 22rem;
+  height: 16rem;
+  overflow: hidden;
 }
 
 .education .box-container .box img {
   object-fit: cover;
-  position: relative;
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 .education .box-container .box .content {
@@ -723,11 +725,14 @@ header .navbar ul li a:hover {
 
   .education .box-container .box .image {
     width: 100%;
-    height: 25rem;
+    height: 20rem;
+    flex: none;
   }
 
   .education .box-container .box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .education .box-container .box .content {
